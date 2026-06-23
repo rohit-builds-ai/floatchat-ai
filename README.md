@@ -1,36 +1,246 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌊 FloatChatAI
 
-## Getting Started
+> Chat with the Ocean.
 
-First, run the development server:
+FloatChatAI is an AI-powered conversational platform for discovering, querying, and visualizing ARGO oceanographic datasets using natural language.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The platform combines Agentic RAG, NL2SQL, Geospatial Analytics, PostgreSQL/PostGIS, and Interactive Scientific Visualizations to make complex ocean data accessible to researchers, students, policymakers, and ocean scientists.
+
+---
+
+## 🚀 Features
+
+### 🤖 Conversational Ocean Intelligence
+
+Ask oceanographic questions in natural language:
+
+* Show salinity profiles near the equator in March 2023
+* Compare BGC parameters in the Arabian Sea
+* What are the nearest ARGO floats to this location?
+
+---
+
+### 🧠 Agentic RAG Pipeline
+
+* Retrieval-Augmented Generation (RAG)
+* Metadata-aware retrieval
+* Contextual ocean data understanding
+* Multi-step reasoning workflows
+
+---
+
+### 🔍 Natural Language to SQL (NL2SQL)
+
+Convert user questions into optimized PostgreSQL queries automatically.
+
+Example:
+
+**User Query**
+
+```text
+Show temperature profiles near Goa during January 2024
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Generated SQL**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sql
+SELECT *
+FROM profiles
+WHERE latitude BETWEEN ...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### 🌍 Geospatial Analytics
 
-To learn more about Next.js, take a look at the following resources:
+Powered by PostGIS:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Radius Search
+* Nearest Float Discovery
+* Float Trajectory Analysis
+* Spatial Filtering
+* Geographic Aggregations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 📊 Interactive Visualizations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Ocean Maps
+* Float Trajectories
+* Temperature Profiles
+* Salinity Profiles
+* Depth-Time Plots
+* Comparative Analytics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### ⚡ Scalable Data Pipeline
+
+Processes large-scale ARGO datasets:
+
+```text
+NetCDF
+    ↓
+Data Processing
+    ↓
+PostgreSQL + PostGIS
+    ↓
+Vector Database
+    ↓
+AI Agent
+```
+
+---
+
+## 🏗️ Architecture
+
+```text
+                   ARGO NetCDF Files
+                            │
+                            ▼
+                 Data Ingestion Service
+                            │
+      ┌─────────────────────┼─────────────────────┐
+      ▼                     ▼                     ▼
+
+ PostgreSQL            ChromaDB             Parquet
+ + PostGIS            Vector Store         Data Lake
+
+      │                     │
+      └─────────────┬───────┘
+                    ▼
+
+              Agentic RAG Layer
+                    │
+      ┌─────────────┼─────────────┐
+      ▼             ▼             ▼
+
+   NL2SQL      Visualization    Insights
+
+                    │
+                    ▼
+
+              Next.js Frontend
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* Next.js 16
+* TypeScript
+* Tailwind CSS v4
+* ShadCN UI
+* Zustand
+
+### Backend
+
+* FastAPI
+* Python
+
+### Databases
+
+* PostgreSQL
+* PostGIS
+* ChromaDB
+
+### AI Stack
+
+* Gemini
+* Agentic RAG
+* NL2SQL
+* Embeddings
+
+### Data Engineering
+
+* XArray
+* Pandas
+* NetCDF4
+* NumPy
+
+### Visualization
+
+* Plotly
+* Leaflet
+* Mapbox
+
+---
+
+## 📂 Project Structure
+
+```text
+floatchatai
+│
+├── apps
+│   ├── web
+│   └── api
+│
+├── services
+│   ├── ingestion-service
+│   ├── rag-service
+│   ├── sql-agent
+│   └── visualization-service
+│
+├── packages
+│   ├── database
+│   ├── shared-types
+│   └── ui
+│
+├── docs
+│
+├── datasets
+│
+└── scripts
+```
+
+---
+
+## 📈 Project Goals
+
+* Democratize access to oceanographic data
+* Simplify ARGO dataset exploration
+* Enable natural language querying of scientific datasets
+* Support researchers and decision-makers with AI-powered insights
+* Create a scalable foundation for future ocean intelligence systems
+
+---
+
+## 🎯 Future Roadmap
+
+### Phase 1
+
+* ARGO NetCDF Ingestion
+* PostgreSQL Storage
+* Geospatial Search
+* Interactive Maps
+
+### Phase 2
+
+* Agentic RAG
+* NL2SQL
+* Conversational Interface
+
+### Phase 3
+
+* Advanced Analytics
+* Multi-Dataset Support
+* Voice Queries
+* Research Report Generation
+
+---
+
+## 👨‍💻 Author
+
+**Rohit Vishwakarma**
+
+Full Stack AI Engineer
+
+Building AI-powered systems at the intersection of Data Engineering, Geospatial Analytics, and Agentic AI.
+
+---
+
+## 📜 License
+
+MIT License
